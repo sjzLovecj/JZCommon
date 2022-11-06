@@ -11,19 +11,19 @@ import UIKit
 public typealias AssociatedKeyHolder<T> = [Int : T]
 
 // 用于统一设置
-public class SJZBaseModel {
+open class SJZBaseModel: NSObject {
     // 用于设置统一背景色
-    public var backgroundColor: UIColor = UIColor.white
+    open var backgroundColor: UIColor = UIColor.white
     // 用于设置统一导航View
-    public var navigationConfig: SJZNavBarConfig = SJZNavBarConfig()
+    open var navigationConfig: SJZNavBarConfig = SJZNavBarConfig()
     // 设置返回按钮颜色
-    public var backImageName: String = ""
+    open var backImageName: String = ""
 }
 
-public class SJZBaseController: UIViewController {
+open class SJZBaseController: UIViewController {
     // 用于统一设置Model
-    static var baseModelKey = AssociatedKeyHolder<SJZBaseModel>()
-    static var baseModel: SJZBaseModel? {
+    static public var baseModelKey = AssociatedKeyHolder<SJZBaseModel>()
+    static public var baseModel: SJZBaseModel? {
         get { SJZBaseController.baseModelKey[1] }
         set { SJZBaseController.baseModelKey[1] = newValue }
     }
@@ -37,7 +37,11 @@ public class SJZBaseController: UIViewController {
             if navigationBarViewHidden {
                 navigationBarView.configuration.navBarHeight = 0
             }else {
+#if targetEnvironment(macCatalyst)
+                navigationBarView.configuration.navBarHeight = navigationHeight + 20
+#else
                 navigationBarView.configuration.navBarHeight = navigationHeight
+#endif
             }
         }
     }
@@ -48,7 +52,7 @@ public class SJZBaseController: UIViewController {
     // 返回按钮
     private lazy var backButton: UIButton = {
         let backButton = UIButton()
-        backButton.frame = CGRect(x: 0, y: 0, width: 30, height: 44)
+        backButton.frame = CGRect(x: 0, y: 0, width: 30, height: navigationBarHeight)
         backButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
         return backButton
     }()
@@ -84,7 +88,7 @@ public class SJZBaseController: UIViewController {
         return contentView
     }()
     
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         
         if let baseModel = SJZBaseController.baseModel {
@@ -135,7 +139,7 @@ public class SJZBaseController: UIViewController {
     
     /// 构建子视图
     /// - Parameter superView: 父视图，容器视图contentView
-    public func buildSubView(contentView superView: UIView) {
+    open func buildSubView(contentView superView: UIView) {
         
     }
     
@@ -146,9 +150,9 @@ public class SJZBaseController: UIViewController {
             navigationController?.setNavigationBarHidden(true, animated: animated)
         }
         
-        if let contain = navigationController?.viewControllers.contains(self), !contain {
-            navigationBarViewHidden = true
-        }
+//        if let contain = navigationController?.viewControllers.contains(self), !contain {
+//            navigationBarViewHidden = true
+//        }
     }
 
     public override func viewWillDisappear(_ animated: Bool) {

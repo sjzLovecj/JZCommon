@@ -14,11 +14,12 @@ public enum SJZColorSchemeType: Int {
     case dark
 }
 
+@available(macCatalyst 14.0, *)
 public struct SJZColorScheme {
-    static let shared = SJZColorScheme()
+    static public let shared = SJZColorScheme()
     
     // App的颜色类型，默认为跟随系统
-    @AppStorage("colorSchemeType") var colorSchemeType: SJZColorSchemeType = .system
+    @AppStorage("colorSchemeType") public var colorSchemeType: SJZColorSchemeType = .system
     @Environment(\.colorScheme) var colorSchemd: ColorScheme
     
     // 判断是否为暗黑模式

@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-public class SJZNavBarConfig {
+open class SJZNavBarConfig {
     // 设置背景颜色
     public var backgroundColor: UIColor = UIColor.white {
         didSet {
@@ -17,7 +17,7 @@ public class SJZNavBarConfig {
     }
     
     // 设置文字颜色
-    public var titleColor: UIColor = UIColor.white {
+    public var titleColor: UIColor? = UIColor.white {
         didSet {
             navBarView?.titleLabel.textColor = titleColor
         }
@@ -72,7 +72,7 @@ public class SJZNavBarConfig {
     fileprivate weak var navBarView: SJZNavBarView?
 }
 
-public class SJZNavBarView: UIView {
+open class SJZNavBarView: UIView {
 
     // 设置navigation View
     public var customView: UIView? {
@@ -236,7 +236,7 @@ public class SJZNavBarView: UIView {
     
     fileprivate var titleLabel: UILabel = UILabel()
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         
         configuration.navBarView = self
@@ -251,7 +251,7 @@ public class SJZNavBarView: UIView {
         buildSubView()
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
@@ -261,16 +261,16 @@ extension SJZNavBarView {
     fileprivate func buildSubView() {
         addSubview(leftStackView)
         leftStackView.snp.makeConstraints { make in
-            make.top.equalTo(statusBarHeight)
+            make.height.equalTo(navigationBarHeight)
             make.left.equalTo(12)
-            make.height.equalTo(44)
+            make.bottom.equalToSuperview()
         }
         
         addSubview(rightStackView)
         rightStackView.snp.makeConstraints { make in
-            make.top.equalTo(statusBarHeight)
+            make.height.equalTo(navigationBarHeight)
             make.right.equalTo(-12)
-            make.height.equalTo(44)
+            make.bottom.equalToSuperview()
         }
         
         addSubview(titleLabel)

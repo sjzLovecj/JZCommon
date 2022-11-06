@@ -7,9 +7,9 @@
 
 import UIKit
 
-class SJZNavigationController: UINavigationController, UIGestureRecognizerDelegate {
+open class SJZNavigationController: UINavigationController, UIGestureRecognizerDelegate {
     
-    override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
 
         if UIDevice.current.userInterfaceIdiom == .phone {
@@ -19,17 +19,12 @@ class SJZNavigationController: UINavigationController, UIGestureRecognizerDelega
         }
     }
     
-    override var childForStatusBarStyle: UIViewController? {
+    open override var childForStatusBarStyle: UIViewController? {
         return self.topViewController
     }
     
-    
-}
-
-// 重写 push 方法
-extension SJZNavigationController {
     // 隐藏
-    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+    open override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         if viewControllers.count > 0 {
             viewController.hidesBottomBarWhenPushed = true
         }
@@ -38,7 +33,7 @@ extension SJZNavigationController {
     }
 }
 
-extension SJZNavigationController {
+public extension SJZNavigationController {
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         if gestureRecognizer == interactivePopGestureRecognizer {
             if viewControllers.count < 2 {

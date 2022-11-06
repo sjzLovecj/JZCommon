@@ -8,12 +8,13 @@
 import Foundation
 import SwiftUI
 
-struct SJZFirstLunch {
-    static var shared: SJZFirstLunch = SJZFirstLunch()
+@available(iOS 14.0, *)
+public struct SJZFirstLunch {
+    static public var shared: SJZFirstLunch = SJZFirstLunch()
     
     // 是否为第一次下载，并且第一次启动，默认为是
-    @AppStorage("isFirstLunch") var isFirstLunch: Bool = true
-    @AppStorage("appVersion") var appVersion: String = ""
+    @AppStorage("isFirstLunch") public var isFirstLunch: Bool = true
+    @AppStorage("appVersion") public var appVersion: String = ""
     
     // 获取设备信息
     public func getInfoDict() -> [String : Any] {
@@ -33,7 +34,7 @@ struct SJZFirstLunch {
     /// 判断是否第一次，或升级后第一次打开App
     /// - Parameter complete: 第一次安装，重新安装 或者 升级后第一次打开App需要处理的事情，
     ///      isFirstLunch参数：是否为第一次安装，重新安装
-    func updateVersion(complete: (_ isFirstLunch: Bool) -> ()) {
+    public func updateVersion(complete: (_ isFirstLunch: Bool) -> ()) {
         let version = getVersion()
         // version为空，说明获取版本信息错误
         guard !version.isEmpty else { return }
