@@ -43,6 +43,13 @@ open class SJZBaseController: UIViewController {
                 navigationBarView.configuration.navBarHeight = navigationHeight
 #endif
             }
+            
+            if view.subviews.contains(contentView) {
+                contentView.snp.remakeConstraints { make in
+                    make.bottom.left.right.equalToSuperview()
+                    make.top.equalTo(navigationBarView.configuration.navBarHeight)
+                }
+            }
         }
     }
 
@@ -119,7 +126,7 @@ open class SJZBaseController: UIViewController {
             view.addSubview(contentView)
             contentView.snp.makeConstraints { make in
                 make.bottom.left.right.equalToSuperview()
-                make.top.equalTo(navigationBarView.snp.bottom)
+                make.top.equalTo(navigationBarView.configuration.navBarHeight)
             }
         }else {
             view.addSubview(contentView)
