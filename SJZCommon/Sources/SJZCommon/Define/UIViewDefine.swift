@@ -10,23 +10,43 @@ import UIKit
 
 public extension UIView {
     // View的高度
-    var viewWidth: CGFloat {
-        frame.size.width
+    var width: CGFloat {
+        get { frame.size.width }
+        set {
+            var viewFrame = frame
+            viewFrame.size.width = newValue
+            frame = viewFrame
+        }
     }
     
     // View的宽度
-    var viewHeight: CGFloat {
-        frame.size.height
+    var height: CGFloat {
+        get { frame.size.height }
+        set {
+            var viewFrame = frame
+            viewFrame.size.height = newValue
+            frame = viewFrame
+        }
     }
     
     // view的位置x
-    var viewX: CGFloat {
-        frame.origin.x
+    var x: CGFloat {
+        get { frame.origin.x }
+        set {
+            var viewFrame = frame
+            viewFrame.origin.x = newValue
+            frame = viewFrame
+        }
     }
     
     // view的位置y
-    var viewY: CGFloat {
-        frame.origin.y
+    var y: CGFloat {
+        get { frame.origin.y }
+        set {
+            var viewFrame = frame
+            viewFrame.origin.y = newValue
+            frame = viewFrame
+        }
     }
     
 }

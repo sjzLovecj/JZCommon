@@ -10,13 +10,13 @@ import UIKit
 public extension UIViewController {
     
     // 控制器中，view的宽度
-    var viewWidth: CGFloat {
-        view.viewWidth
+    var width: CGFloat {
+        view.width
     }
     
     // 控制器中，view的高度
-    var viewHeight: CGFloat {
-        view.viewHeight
+    var height: CGFloat {
+        view.height
     }
     
 }
