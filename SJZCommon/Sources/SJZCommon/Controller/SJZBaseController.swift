@@ -98,6 +98,8 @@ open class SJZBaseController: UIViewController {
     open override func viewDidLoad() {
         super.viewDidLoad()
         
+        isStatusBarDark = !SJZColorScheme.shared.isDark()
+        
         if let baseModel = SJZBaseController.baseModel {
             view.backgroundColor = baseModel.backgroundColor
             
