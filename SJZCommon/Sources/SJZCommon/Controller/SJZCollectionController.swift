@@ -35,37 +35,7 @@ open class SJZCollectionController<SectionType, ItemType>: SJZBaseController whe
     open override func viewDidLoad() {
         super.viewDidLoad()
         
-        registProvider()
-    }
-    
-    private func registProvider() {
-        baseCellRegist = registCell(CellType: UICollectionViewCell.self) { [weak self] cell, indexPath, itemIdentifier in
-            guard let self = self else { return }
-            self.configureCell(cell, indexPath, itemIdentifier)
-        }
-        
-//        baseHeadRegist = UICollectionView.SupplementaryRegistration<UICollectionReusableView>(elementKind: "headRegist") { supplementaryView, elementKind, indexPath in
-//
-//        }
-//
-//        baseFootRegist = UICollectionView.SupplementaryRegistration<UICollectionReusableView>(elementKind: "footRegist") { supplementaryView, elementKind, indexPath in
-//
-//        }
-//
-//
-//        dataSource.supplementaryViewProvider = { [weak self] (view, kind, index) in
-//            guard let self = self else { return nil}
-//
-//            if kind == "headRegist" {
-//                return self.collectionView.dequeueConfiguredReusableSupplementary(using: self.baseHeadRegist, for: index)
-//            }else if kind == "footRegist" {
-//                return self.collectionView.dequeueConfiguredReusableSupplementary(using: self.baseFootRegist, for: index)
-//            }else  {
-//
-//            }
-//
-//            return nil
-//        }
+        baseCellRegist = registCell(CellType: UICollectionViewCell.self)
     }
     
     open override func buildSubView(contentView superView: UIView) {
@@ -86,9 +56,10 @@ open class SJZCollectionController<SectionType, ItemType>: SJZBaseController whe
     
     // MARK: - dataSource 与 Cell
     // 封装注册Cell
-    open func registCell<Cell>(CellType: Cell.Type, handler: @escaping UICollectionView.CellRegistration<Cell, ItemType>.Handler) -> UICollectionView.CellRegistration<Cell, ItemType> where Cell: UICollectionViewCell {
-        let cell = UICollectionView.CellRegistration<Cell, ItemType>{ (cell, indexPath, identifier) in
-            handler(cell, indexPath, identifier)
+    open func registCell<Cell>(CellType: Cell.Type) -> UICollectionView.CellRegistration<Cell, ItemType> where Cell: UICollectionViewCell {
+        let cell = UICollectionView.CellRegistration<Cell, ItemType>{ [weak self] (cell, indexPath, identifier) in
+            guard let self = self else { return }
+            self.configureCell(cell, indexPath, identifier)
         }
         
         return cell
