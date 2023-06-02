@@ -8,6 +8,7 @@
 import UIKit
 import SwiftUI
 
+// MARK: - Controller中对view属性进行简单的封装
 public extension UIViewController {
     // 控制器中，view的宽度
     var width: CGFloat { view.width }
