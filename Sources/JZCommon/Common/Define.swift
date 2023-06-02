@@ -64,17 +64,20 @@ public class Define {
 extension Define {
     
     // 获取当前Controller
+    @discardableResult
     public static func currentController() -> UIViewController {
         if let currentController = getCurrent() { return currentController }
         return UIViewController()
     }
     
     // 获取当前控制器
+    @discardableResult
     public static func currentNavigation() -> UINavigationController? {
         currentController().navigationController
     }
     
     // 获取可用的导航控制器
+    @discardableResult
     public static func getNavigation(controller: UIViewController? = nil) -> UINavigationController? {
         if let navController = controller as? UINavigationController {
             return navController
@@ -85,6 +88,7 @@ extension Define {
     }
     
     // 获取current
+    @discardableResult
     public static func getCurrent(_ controller: UIViewController? = keyWindow?.rootViewController) -> UIViewController? {
         if let naviController = controller as? UINavigationController,
             let visibleController = naviController.visibleViewController { // 导航栏
@@ -101,45 +105,7 @@ extension Define {
 
 // 获取App各种基础信息
 extension Define {
-    
-//   //获取app信息
-//   let infoDictionary: Dictionary = Bundle.main.infoDictionary!
-//
-//   // 当前版本号
-//   let kAppCurrentVersion = infoDictionary["CFBundleShortVersionString"] as! String
-//
-//   // app名称
-//   let kAppDisplayName = infoDictionary["CFBundleDisplayName"] as! String
-//
-//   // build号
-//   let kAppMinorVersion = infoDictionary["CFBundleVersion"] as! String
-//
-//   // bundleId
-//   let kBundleId: String = Bundle.main.bundleIdentifier ?? ""
-//
-//   // 系统名称，如：iOS
-//   let kSystemName: String = UIDevice.current.systemName
-//
-//   // 系统版本，如：14.6
-//   let kSystemVersion: String = UIDevice.current.systemVersion
-//
-//   // 设备udid
-//   //let kUdid = UIDevice.current.identifierForVendor!.uuidString
-//
-//   // 设备名称，这个是用户可以自己定义的。如：xxx的iphoneX
-//   let kDeviceName: String = UIDevice.current.name
-//
-//   // 设备型号，具体是什么手机。如：iPhone13
-//   // modelName查看https://blog.csdn.net/HDFQQ188816190/article/details/123742637?spm=1001.2014.3001.5501
-//   let kPhoneModel: String = UIDevice.current.modelName
-//
-//   // 设备型号， 如：iphone
-//   let kDeviceModel = UIDevice.current.model
-//
-//   // 设备区域化型号，如：A1533
-//   let kLocalizedModel = UIDevice.current.localizedModel
 
-    
     // 获取App信息
     public static var infoDict: [String : Any]? { Bundle.main.infoDictionary }
     
@@ -162,7 +128,6 @@ extension Define {
     // 钥匙串存储UUID
     
     // 钥匙串存储UDID、ADFA
-    
 //    public static var deviceUUID = UIDevice.current.identifierForVendor?.uuidString
     
 }

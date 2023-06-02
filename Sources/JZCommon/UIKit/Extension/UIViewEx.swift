@@ -48,8 +48,19 @@ public extension UIView {
         }
     }
     
+    // 设置View的圆角
+    var cornerRadius: CGFloat {
+        get { layer.cornerRadius }
+        set {
+            layer.cornerRadius = newValue
+            layer.masksToBounds = true
+        }
+    }
+
+    
+    
+    // 截图View图片
     func shotImageFromView() -> UIImage? {
         ScreenShot.shotImageFromView(self)
     }
-    
 }

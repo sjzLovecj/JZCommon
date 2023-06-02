@@ -7,9 +7,12 @@
 
 import UIKit
 
-struct ScreenShot {
+public struct ScreenShot {
     
-    static func shotImageFromView(_ view: UIView) -> UIImage? {
+    /// 截取view图片
+    /// - Parameter view: 截取的view
+    /// - Returns: 返回UIImage
+    public static func shotImageFromView(_ view: UIView) -> UIImage? {
         var size = view.frame.size
         var image: UIImage?
         

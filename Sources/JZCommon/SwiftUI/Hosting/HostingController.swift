@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 
-class HostingController<Content>: UIHostingController<AnyView> where Content : View {
+public class HostingController<Content>: UIHostingController<AnyView> where Content : View {
 
     // 回调方法
     public var didLoad: (() -> ())?

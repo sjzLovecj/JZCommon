@@ -13,9 +13,9 @@ import UIKit
 /// 1. 重新在 .xcassets 中建立一个 Image Set，并取一个新的名字
 /// 2. 更换在 LaunchScreen.storyboard 中的图片
 /// 3. 在AppDelegate的初始化方法中，调用 removeLaunchScreenCacheIfNeeded() 方法
-struct LaunchScreenChange {
+public struct LaunchScreenChange {
 
-    static func removeLaunchScreenCacheIfNeeded() {
+    public static func removeLaunchScreenCacheIfNeeded() {
         let filePath = String(format: "%@/Library/SplashBoard/Snapshots/%@ - {DEFAULT GROUP}/", NSHomeDirectory(), Define.appBundleId)
         
         if FileManager.default.fileExists(atPath: filePath),
@@ -35,7 +35,7 @@ struct LaunchScreenChange {
         }
     }
 
-    static func imageFromLaunchScreen() -> UIImage? {
+    private static func imageFromLaunchScreen() -> UIImage? {
         guard let storyBoardName = Define.infoDict?["UILaunchStoryboardName"] as? String,
               let launchView = UIStoryboard(name: storyBoardName, bundle: nil).instantiateInitialViewController()?.view
         else { return nil }

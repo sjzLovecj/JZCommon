@@ -9,15 +9,4 @@ import UIKit
 
 extension UINavigationController {
     
-    
-    
-//    @objc func jz_childForStatusBarStyle() {
-//        childForStatusBarStyle()
-//    }
-
-    // MARK: -
-//    open override var childForStatusBarStyle: UIViewController? {
-//        return topViewController
-//    }
-    
 }
