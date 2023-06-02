@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  JXCommonDemo
+//  JZCommonExample
 //
 //  Created by S JZ on 2023/6/1.
 //

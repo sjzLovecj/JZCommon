@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  StringEx.swift
 //  
 //
 //  Created by S JZ on 2022/11/8.
@@ -7,6 +7,7 @@
 
 import Foundation
 
+// 将String转换成NSString，做一些NSString简单的操作
 extension String {
     
     // MARK: - 将字符串转为字符型

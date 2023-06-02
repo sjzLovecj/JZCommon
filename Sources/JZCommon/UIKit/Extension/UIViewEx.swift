@@ -1,12 +1,11 @@
 //
-//  ViewDefine.swift
+//  UIViewEx.swift
 //  Demo
 //
 //  Created by S JZ on 2022/11/1.
 //
 
 import UIKit
-
 
 public extension UIView {
     // View的高度
@@ -47,6 +46,10 @@ public extension UIView {
             viewFrame.origin.y = newValue
             frame = viewFrame
         }
+    }
+    
+    func shotImageFromView() -> UIImage? {
+        ScreenShot.shotImageFromView(self)
     }
     
 }
