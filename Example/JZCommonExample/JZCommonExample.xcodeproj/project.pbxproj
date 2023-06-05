@@ -24,6 +24,8 @@
 		5742471C2A29AE7C008A3155 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5742471B2A29AE7C008A3155 /* HostingController.swift */; };
 		5742471E2A29AF87008A3155 /* LaunchScreenChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5742471D2A29AF87008A3155 /* LaunchScreenChange.swift */; };
 		574247212A29B334008A3155 /* ScreenShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574247202A29B334008A3155 /* ScreenShot.swift */; };
+		574247232A2D76A6008A3155 /* OpenTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574247222A2D76A6008A3155 /* OpenTools.swift */; };
+		574247252A2DA444008A3155 /* CircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574247242A2DA444008A3155 /* CircularView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		5742471B2A29AE7C008A3155 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
 		5742471D2A29AF87008A3155 /* LaunchScreenChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenChange.swift; sourceTree = "<group>"; };
 		574247202A29B334008A3155 /* ScreenShot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenShot.swift; sourceTree = "<group>"; };
+		574247222A2D76A6008A3155 /* OpenTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTools.swift; sourceTree = "<group>"; };
+		574247242A2DA444008A3155 /* CircularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,7 @@
 				574247142A29A949008A3155 /* ExchangeMethod.swift */,
 				5742471D2A29AF87008A3155 /* LaunchScreenChange.swift */,
 				574247202A29B334008A3155 /* ScreenShot.swift */,
+				574247222A2D76A6008A3155 /* OpenTools.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				574247162A29AB10008A3155 /* GradientView.swift */,
+				574247242A2DA444008A3155 /* CircularView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -253,6 +259,7 @@
 				5742470E2A2890B8008A3155 /* Define.swift in Sources */,
 				574247172A29AB10008A3155 /* GradientView.swift in Sources */,
 				5742470C2A2890B8008A3155 /* UIFontEx.swift in Sources */,
+				574247252A2DA444008A3155 /* CircularView.swift in Sources */,
 				574247132A2895FC008A3155 /* ColorScheme.swift in Sources */,
 				5742471C2A29AE7C008A3155 /* HostingController.swift in Sources */,
 				574247212A29B334008A3155 /* ScreenShot.swift in Sources */,
@@ -262,6 +269,7 @@
 				5742470B2A2890B8008A3155 /* UIColorEx.swift in Sources */,
 				5742471E2A29AF87008A3155 /* LaunchScreenChange.swift in Sources */,
 				574247102A2890B8008A3155 /* UIViewEx.swift in Sources */,
+				574247232A2D76A6008A3155 /* OpenTools.swift in Sources */,
 				574247112A2890B8008A3155 /* UIViewControllerEx.swift in Sources */,
 				574247152A29A949008A3155 /* ExchangeMethod.swift in Sources */,
 			);
