@@ -7,8 +7,18 @@
 
 import UIKit
 
-extension UINavigationController {
-    
-    
-    
-}
+//public extension UINavigationController {
+//    
+////    public var isStatusBarDark: Bool
+///
+//    override var childForStatusBarStyle: UIViewController? {
+//        return topViewController
+//    }
+//}
+//
+//
+//class JZNavigationController: UINavigationController {
+//    override var childForStatusBarStyle: UIViewController? {
+//        return topViewController
+//    }
+//}

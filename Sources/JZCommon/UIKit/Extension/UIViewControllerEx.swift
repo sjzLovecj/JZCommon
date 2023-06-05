@@ -29,7 +29,7 @@ public extension UIViewController {
 }
 
 // MARK: - 在Controller中添加 SwiftUI 的View
-extension UIViewController {
+public extension UIViewController {
     
     /// 将 SwiftUI 的 View 生成Controller
     /// - Parameter content: SwiftUI 的 View
@@ -69,3 +69,5 @@ extension UIViewController {
         childVC.removeFromParent()
     }
 }
+
+

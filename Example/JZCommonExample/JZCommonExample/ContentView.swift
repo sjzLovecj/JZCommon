@@ -19,6 +19,7 @@ struct ContentView: View {
                 .foregroundColor(.accentColor)
             Text("Hello, world!")
         }
+//        .preferred
 //        .statusBarHidden()
 //        .preferredColorScheme(.dark)
 //        .preferredColorScheme(.light)
