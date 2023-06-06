@@ -53,6 +53,9 @@
 		574247662A2DB9B5008A3155 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5742471B2A29AE7C008A3155 /* HostingController.swift */; };
 		574247682A2DC7B9008A3155 /* JZControllerConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574247672A2DC7B9008A3155 /* JZControllerConfigure.swift */; };
 		574247692A2DC881008A3155 /* JZControllerConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574247672A2DC7B9008A3155 /* JZControllerConfigure.swift */; };
+		5742476E2A2EBD74008A3155 /* BarConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5742476D2A2EBD74008A3155 /* BarConfigure.swift */; };
+		574247702A2EC1E9008A3155 /* ScendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5742476F2A2EC1E8008A3155 /* ScendViewController.swift */; };
+		574247722A2EC26A008A3155 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574247712A2EC26A008A3155 /* ThirdViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +91,9 @@
 		574247532A2DB76B008A3155 /* JZViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JZViewController.swift; sourceTree = "<group>"; };
 		574247552A2DB78E008A3155 /* JZNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JZNavigationController.swift; sourceTree = "<group>"; };
 		574247672A2DC7B9008A3155 /* JZControllerConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JZControllerConfigure.swift; sourceTree = "<group>"; };
+		5742476D2A2EBD74008A3155 /* BarConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarConfigure.swift; sourceTree = "<group>"; };
+		5742476F2A2EC1E8008A3155 /* ScendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScendViewController.swift; sourceTree = "<group>"; };
+		574247712A2EC26A008A3155 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +199,7 @@
 		574246FB2A2890B8008A3155 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				5742476C2A2EBD4B008A3155 /* Tool */,
 				574246FC2A2890B8008A3155 /* Extension */,
 				574246FF2A2890B8008A3155 /* View */,
 				574247522A2DB74D008A3155 /* Controller */,
@@ -241,6 +248,8 @@
 				5742473F2A2DB367008A3155 /* AppDelegate.swift */,
 				574247412A2DB367008A3155 /* SceneDelegate.swift */,
 				574247432A2DB367008A3155 /* ViewController.swift */,
+				5742476F2A2EC1E8008A3155 /* ScendViewController.swift */,
+				574247712A2EC26A008A3155 /* ThirdViewController.swift */,
 				574247452A2DB367008A3155 /* Main.storyboard */,
 				574247482A2DB369008A3155 /* Assets.xcassets */,
 				5742474A2A2DB369008A3155 /* LaunchScreen.storyboard */,
@@ -257,6 +266,14 @@
 				574247552A2DB78E008A3155 /* JZNavigationController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		5742476C2A2EBD4B008A3155 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				5742476D2A2EBD74008A3155 /* BarConfigure.swift */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,6 +388,7 @@
 				574247132A2895FC008A3155 /* ColorScheme.swift in Sources */,
 				5742471C2A29AE7C008A3155 /* HostingController.swift in Sources */,
 				574247212A29B334008A3155 /* ScreenShot.swift in Sources */,
+				5742476E2A2EBD74008A3155 /* BarConfigure.swift in Sources */,
 				574246DB2A28909C008A3155 /* ContentView.swift in Sources */,
 				574246D92A28909C008A3155 /* JZCommonExampleApp.swift in Sources */,
 				5742470D2A2890B8008A3155 /* StringEx.swift in Sources */,
@@ -401,6 +419,7 @@
 				574247662A2DB9B5008A3155 /* HostingController.swift in Sources */,
 				5742475A2A2DB9A8008A3155 /* StringEx.swift in Sources */,
 				574247602A2DB9AC008A3155 /* UIViewControllerEx.swift in Sources */,
+				574247702A2EC1E9008A3155 /* ScendViewController.swift in Sources */,
 				574247642A2DB9B3008A3155 /* JZNavigationController.swift in Sources */,
 				574247572A2DB9A8008A3155 /* Define.swift in Sources */,
 				574247612A2DB9AC008A3155 /* UIViewEx.swift in Sources */,
@@ -408,6 +427,7 @@
 				574247622A2DB9B0008A3155 /* CircularView.swift in Sources */,
 				5742475C2A2DB9A8008A3155 /* UIColorEx.swift in Sources */,
 				574247422A2DB367008A3155 /* SceneDelegate.swift in Sources */,
+				574247722A2EC26A008A3155 /* ThirdViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

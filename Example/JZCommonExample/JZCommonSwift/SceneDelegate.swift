@@ -17,8 +17,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let config = JZControllerConfigure()
         config.backgroundColor = .white
-        config.navBarBackGroundColor = .red
+        config.navBarBackGroundColor = .white
         JZViewController.setConfigureModel(config)
+        
+        
+//        UINavigationBar.appearance().scrollEdgeAppearance
+//        UINavigationBar.appearance().standardAppearance
+        
+//        UITabBar.appearance().standardAppearance
+//        UITabBar.appearance().scrollEdgeAppearance
         
         let window = UIWindow(windowScene: windowScreen)
         window.rootViewController = JZNavigationController(rootViewController: ViewController())

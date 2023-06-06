@@ -16,13 +16,16 @@ class ViewController: JZViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navBarAppearance.backgroundColor = .green
+        isHiddenNavigaion = true
         
-        
+//        configNavBarAppearance { appearce in
+//            appearce.backgroundColor = .red
+//        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        navigationController?.pushViewController(ViewController(), animated: true)
+        let ctr = ScendViewController()
+        navigationController?.pushViewController(ctr, animated: true)
     }
 }
 

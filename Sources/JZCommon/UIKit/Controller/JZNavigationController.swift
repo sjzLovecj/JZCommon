@@ -17,7 +17,6 @@ open class JZNavigationController: UINavigationController {
         super.viewDidLoad()
         
     }
-    
 }
 
 

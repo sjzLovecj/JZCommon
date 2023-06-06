@@ -34,7 +34,7 @@ open class JZViewController: UIViewController {
     
     // 设置导航栏样式
     // 如果在子控制器中，更改该属性后，请调用 reloadNavBar() 方法，刷新导航栏
-    public private(set) var navBarAppearance = UINavigationBarAppearance()
+    lazy public private(set) var navBarAppearance = UINavigationBarAppearance()
 }
 
 // 是否隐藏导航栏
@@ -42,15 +42,22 @@ extension JZViewController {
     
     open override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureController()
-        reloadNavBar()
     }
     
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        configNavBarAppearance()
         // 隐藏导航栏
         if isHiddenNavigaion { navigationController?.setNavigationBarHidden(true, animated: animated) }
+    }
+    
+    // 配置UINavigationBarAppearance，并重新给导航栏赋值
+    public func configNavBarAppearance(appearance: ((UINavigationBarAppearance) -> ())? = nil) {
+        appearance?(navBarAppearance)
+        navigationController?.navigationBar.standardAppearance = navBarAppearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
     }
     
     open override func viewWillDisappear(_ animated: Bool) {
@@ -68,16 +75,12 @@ extension JZViewController {
         return false
     }
     
-    public func reloadNavBar() {
-        navigationController?.navigationBar.standardAppearance = navBarAppearance
-        navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
-    }
-    
+    // 配置默认参数
     private func configureController() {
         guard let configureModel = JZViewController.configureModel else { return }
-        
         backgroundColor = configureModel.backgroundColor
         isStatusBarDark = configureModel.isStatusBarDark
+        
         if let appearance = configureModel.navBarAppearance {
             navBarAppearance = appearance
         }else {
