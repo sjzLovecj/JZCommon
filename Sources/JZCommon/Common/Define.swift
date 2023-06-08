@@ -125,6 +125,8 @@ extension Define {
     // 系统版本
     public static var systemVersion: String = UIDevice.current.systemVersion
     
+    public static var interfaceIdiom: UIUserInterfaceIdiom = UIDevice.current.userInterfaceIdiom
+    
     // 钥匙串存储UUID
     
     // 钥匙串存储UDID、ADFA
