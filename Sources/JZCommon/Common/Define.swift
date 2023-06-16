@@ -132,6 +132,7 @@ extension Define {
     // 钥匙串存储UDID、ADFA
 //    public static var deviceUUID = UIDevice.current.identifierForVendor?.uuidString
     
+    
 }
 
 

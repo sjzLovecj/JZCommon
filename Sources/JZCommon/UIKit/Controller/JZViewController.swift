@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 /// 更改状态栏颜色：
 /// 1. 在targets中的 info.plist 文件中将 View controller-based status bar appearance 设置为 NO
@@ -14,7 +15,7 @@ open class JZViewController: UIViewController {
     // 设置全局更改变量
     static private var configureKey = "configureKey"
     static private var configureDict = ControllerConfigurType<JZControllerConfigure>()
-    static private var configureModel: JZControllerConfigure? {
+    static public private(set) var configureModel: JZControllerConfigure? {
         get { JZViewController.configureDict[configureKey] }
         set { JZViewController.configureDict[configureKey] = newValue }
     }
@@ -49,6 +50,7 @@ extension JZViewController {
         super.viewWillAppear(animated)
         
         configNavBarAppearance()
+        
         // 隐藏导航栏
         if isHiddenNavigaion { navigationController?.setNavigationBarHidden(true, animated: animated) }
     }
@@ -76,7 +78,7 @@ extension JZViewController {
     }
     
     // 配置默认参数
-    private func configureController() {
+    public func configureController() {
         guard let configureModel = JZViewController.configureModel else { return }
         backgroundColor = configureModel.backgroundColor
         isStatusBarDark = configureModel.isStatusBarDark
@@ -102,5 +104,45 @@ extension JZViewController {
                 }
             }
         }
+    }
+}
+
+extension JZViewController {
+    /// 将 SwiftUI 的 View 生成Controller
+    /// - Parameter content: SwiftUI 的 View
+    /// - Returns: 生成的控制器
+    public func hostingController<Content: View>(content: () -> Content) -> UIViewController {
+        let controller = HostingController(rootView:
+            content()
+        )
+        controller.view.backgroundColor = .clear
+        addChildVC(controller)
+        return controller
+    }
+    
+    /// 将SwiftUI的View生成UIView
+    /// - Parameter content: SwiftUI的View
+    /// - Returns: 生成控制器的View
+    public func hostingView<Content: View>(content: () -> Content) -> UIView {
+        let controller = HostingController(rootView:
+            content()
+        )
+        controller.view.backgroundColor = .clear
+        addChildVC(controller)
+        return controller.view
+    }
+    
+    /// 添加子控制器
+    /// - Parameter childVC: 子控制器
+    public func addChildVC(_ childVC: UIViewController) {
+        addChild(childVC)
+        childVC.didMove(toParent: self)
+    }
+    
+    /// 删除子控制器
+    /// - Parameter childVC: 子控制器
+    public func removeChildVC(_ childVC: UIViewController) {
+        childVC.willMove(toParent: self)
+        childVC.removeFromParent()
     }
 }

@@ -1,5 +1,5 @@
 //
-//  ColorScheme.swift
+//  JZColorScheme.swift
 //  JZCommonExample
 //
 //  Created by S JZ on 2023/6/1.
@@ -17,11 +17,21 @@ public enum ColorSchemeType: Int {
 }
 
 /// 更改App主题颜色
-public struct ColorScheme {
-    public static let shared: ColorScheme = ColorScheme()
+public struct JZColorScheme {
+    public static let shared: JZColorScheme = JZColorScheme()
     
     // 使用AppStorage将 colorSchemeType 保存在UseDefaults中
     @AppStorage("colorSchemeType") public private(set) var colorSchemeType: ColorSchemeType = .system
+    
+    // 判断是否为暗黑模式
+    public var isDark: Bool {
+        if colorSchemeType == .system {
+            return UITraitCollection.current.userInterfaceStyle == .dark
+        }else if colorSchemeType == .dark {
+            return true
+        }
+        return false
+    }
     
     /// 更改App主题颜色
     /// - Parameter type: ColorSchemeType类型

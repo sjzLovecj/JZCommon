@@ -64,3 +64,9 @@ public extension String {
     }
     
 }
+
+public extension String {
+    func localizable() -> String {
+        return Bundle.main.localizedString(forKey: self, value: nil, table: nil)
+    }
+}
