@@ -9,11 +9,11 @@ import SwiftUI
 
 public enum ColorSchemeType: Int {
     // 跟随系统
-    case system
+    case system = 0
     // 浅色模式
-    case light
+    case light = 1
     // 暗黑模式
-    case dark
+    case dark = 2
 }
 
 /// 更改App主题颜色

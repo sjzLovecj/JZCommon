@@ -2,8 +2,8 @@
   "colors" : [
     {
       "color" : {
-        "platform" : "universal",
-        "reference" : "systemPinkColor"
+        "platform" : "ios",
+        "reference" : "groupTableViewBackgroundColor"
       },
       "idiom" : "universal"
     },
@@ -15,8 +15,8 @@
         }
       ],
       "color" : {
-        "platform" : "universal",
-        "reference" : "systemPinkColor"
+        "platform" : "ios",
+        "reference" : "groupTableViewBackgroundColor"
       },
       "idiom" : "universal"
     }
